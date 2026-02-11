@@ -12,13 +12,13 @@
   <div class="container">
     <a class="navbar-brand fw-bold text-white" href="<?= site_url('/') ?>">Wire <span style="color:#D4AF37;">•</span></a>
     <div class="ms-auto d-flex gap-2">
-      <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('/') ?>">Home</a>
-      <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('/about') ?>">About</a>
-      <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('/testimonials') ?>">Testimonials</a>
-      <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('/partners') ?>">Partners</a>
-      <a class="btn btn-outline-light" href="<?= site_url('/login') ?>">Login</a>
-      <a class="btn" style="background:#D4AF37; font-weight:700;" href="<?= site_url('/register') ?>">Register</a>
-    </div>
+     <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('/') ?>">Home</a>
+    <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('about') ?>">About</a>
+    <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('testimonials') ?>">Testimonials</a>
+    <a class="btn btn-link text-white text-decoration-none" href="<?= site_url('partners') ?>">Partners</a>
+    <a class="btn btn-outline-light" href="<?= site_url('login') ?>">Login</a>
+    <a class="btn" style="background:#D4AF37; font-weight:700;" href="<?= site_url('register') ?>">Register</a>
+
   </div>
 </nav>
 
