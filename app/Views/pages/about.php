@@ -130,7 +130,7 @@
         <!-- Team Member 1 -->
         <div class="col-md-6 col-lg-3">
             <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
-                <img src="<?= base_url('assets/img/team/founder.jpeg') ?>" 
+                <img src="<?= base_url('assets/img/founder.jpeg') ?>" 
                      class="card-img-top" 
                      style="height:260px; object-fit:cover;"
                      alt="Founder">
@@ -146,7 +146,7 @@
         <!-- Team Member 2 -->
         <div class="col-md-6 col-lg-3">
             <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
-                <img src="<?= base_url('assets/img/team/uxdesigner.jpeg') ?>" 
+                <img src="<?= base_url('assets/img/uxdesigner.jpeg') ?>" 
                      class="card-img-top" 
                      style="height:260px; object-fit:cover;"
                      alt="UI Designer">
@@ -162,7 +162,7 @@
         <!-- Team Member 3 -->
         <div class="col-md-6 col-lg-3">
             <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
-                <img src="<?= base_url('assets/img/team/developer.jpeg') ?>" 
+                <img src="<?= base_url('assets/img/developer.jpeg') ?>" 
                      class="card-img-top" 
                      style="height:260px; object-fit:cover;"
                      alt="Developer">
@@ -178,7 +178,7 @@
         <!-- Team Member 4 -->
         <div class="col-md-6 col-lg-3">
             <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
-                <img src="<?= base_url('assets/img/team/student.jpeg') ?>" 
+                <img src="<?= base_url('assets/img/student.jpeg') ?>" 
                      class="card-img-top" 
                      style="height:260px; object-fit:cover;"
                      alt="Support">
