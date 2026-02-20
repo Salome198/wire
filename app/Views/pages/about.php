@@ -53,7 +53,7 @@
 <section class="bg-white border rounded-4 p-5 mt-4" style="border-left:6px solid #0B3D91;">
   <h2 class="h4 fw-bold" style="color:#0B3D91;">Why Wire exists</h2>
   <p class="text-muted mt-2 mb-4" style="max-width:950px;">
-    Students often use multiple tools across different platforms — notes apps, calendars, emails, learning portals,
+    Students often use multiple tools across different platforms, notes apps, calendars, emails, learning portals,
     and separate wellbeing links. This can feel fragmented and overwhelming. Wire simplifies this by offering one place
     to manage key tasks and access relevant support quickly.
   </p>
