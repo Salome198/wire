@@ -8,7 +8,7 @@
       <h1 class="display-6 fw-bold" style="color:#0B3D91;">Wire — stay organised, supported and on track.</h1>
 
       <p class="lead text-muted mt-3">
-        Wire helps students keep everything in one place — reminders, deadlines, and useful support links —
+        Wire helps students keep everything in one place — reminders, deadlines, and useful support links
         so you can focus on learning without feeling overwhelmed.
       </p>
 
