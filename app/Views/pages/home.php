@@ -5,7 +5,7 @@
 <section class="bg-white border rounded-4 p-5" style="border-top:6px solid #D4AF37;">
   <div class="row align-items-center g-4">
     <div class="col-lg-7">
-      <h1 class="display-6 fw-bold" style="color:#0B3D91;">Wire — stay organised, supported and on track.</h1>
+      <h1 class="display-6 fw-bold" style="color:#0B3D91;">Wire - stay organised, supported and on track.</h1>
 
       <p class="lead text-muted mt-3">
         Wire helps students keep everything in one place — reminders, deadlines, and useful support links
@@ -21,7 +21,7 @@
       </div>
 
       <div class="small mt-3" style="color:#0B3D91;">
-        <strong>Designed for students</strong> — simple, supportive, and easy to use.
+        <strong>Designed for students</strong> simple, supportive, and easy to use.
       </div>
     </div>
 

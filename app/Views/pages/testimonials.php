@@ -10,17 +10,17 @@
 
   <div class="wire-card p-4 bg-light mt-4">
     <p class="mb-1 fw-semibold">“Having reminders and a weekly overview would help me manage deadlines without panic.”</p>
-    <small class="text-muted">Student feedback</small>
+    <small class="text-muted">Vince Becker</small>
   </div>
 
   <div class="wire-card p-4 bg-light mt-3">
     <p class="mb-1 fw-semibold">“A single dashboard would save time compared to checking multiple apps and emails.”</p>
-    <small class="text-muted">Student feedback</small>
+    <small class="text-muted">James Weather</small>
   </div>
 
   <div class="wire-card p-4 bg-light mt-3">
     <p class="mb-1 fw-semibold">“Students need quick access to support information when they feel overwhelmed.”</p>
-    <small class="text-muted">Support perspective</small>
+    <small class="text-muted">Lana Clark</small>
   </div>
 </div>
 
