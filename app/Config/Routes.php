@@ -22,3 +22,6 @@ $routes->post('register', 'Auth::registerPost');
 $routes->get('logout', 'Auth::logout');
 
 $routes->get('dashboard', 'Dashboard::index');
+$routes->get('dashboard', 'Dashboard::index');
+$routes->get('settings', 'Settings::index');
+$routes->post('settings/profile-image', 'Settings::updateProfileImage');
