@@ -7,8 +7,8 @@
   </div>
 
   <div class="col-lg-9">
-    <div class="bg-white border rounded-4 p-4 mb-4" style="border-top:6px solid #D4AF37;">
-      <h1 class="h4 fw-bold mb-1" style="color:#0B3D91;">Settings</h1>
+    <div class="border rounded-4 p-4" style="background:#F0FFF4; border-color:#2E7D32;">
+      <h1 class="h4 fw-bold mb-1" style="color:#2E7D32;">Settings</h1>
       <p class="text-muted mb-0">View your profile information and update your image.</p>
     </div>
 
@@ -65,4 +65,56 @@
   </div>
 </div>
 
+<div class="alert border rounded-4 mb-4" style="background:#E9F7EF; border-color:#2E7D32;">
+  <div class="d-flex justify-content-between align-items-start">
+    <div>
+      <div class="fw-bold" style="color:#2E7D32;">Upcoming</div>
+      <div class="small text-muted">
+        <strong>Assessment deadline:</strong> Database Coursework — due in 3 days (Demo data).
+      </div>
+    </div>
+    <span class="badge" style="background:#2E7D32;">Reminder</span>
+  </div>
+</div>
+
 <?= $this->endSection() ?>
+
+<hr class="my-4">
+
+<h3 class="h6 fw-bold" style="color:#2E7D32;">Calendar sync (coming soon)</h3>
+<p class="text-muted small mb-3">
+  Wire will allow students to sync deadlines and reminders with external calendars.
+  This section is a placeholder for future API integration.
+</p>
+
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="bg-white border rounded-4 p-3 h-100">
+      <div class="fw-bold">Google Calendar</div>
+      <p class="small text-muted mb-3">Sync reminders and deadlines to Google Calendar.</p>
+      <button class="btn btn-sm" style="background:#2E7D32; color:white; font-weight:700;" disabled>
+        Connect (Demo)
+      </button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="bg-white border rounded-4 p-3 h-100">
+      <div class="fw-bold">Outlook / Cloud Calendar</div>
+      <p class="small text-muted mb-3">Sync with Outlook or Microsoft calendar services.</p>
+      <button class="btn btn-sm" style="background:#2E7D32; color:white; font-weight:700;" disabled>
+        Connect (Demo)
+      </button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="bg-white border rounded-4 p-3 h-100">
+      <div class="fw-bold">University timetable</div>
+      <p class="small text-muted mb-3">Import your timetable using an ICS link or university API.</p>
+      <button class="btn btn-sm" style="background:#2E7D32; color:white; font-weight:700;" disabled>
+        Import (Demo)
+      </button>
+    </div>
+  </div>
+</div>
