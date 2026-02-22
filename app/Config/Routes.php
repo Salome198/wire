@@ -25,3 +25,4 @@ $routes->get('dashboard', 'Dashboard::index');
 $routes->get('dashboard', 'Dashboard::index');
 $routes->get('settings', 'Settings::index');
 $routes->post('settings/profile-image', 'Settings::updateProfileImage');
+$routes->get('logout', 'Auth::logout');
