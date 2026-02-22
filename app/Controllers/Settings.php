@@ -12,7 +12,7 @@ class Settings extends BaseController
             return redirect()->to('/login');
         }
 
-        // Why: we fetch user info from DB so settings reflects stored profile data.
+        // Why: this fetches user info from DB so settings reflects stored profile data.
         $users = new UserModel();
         $user = $users->find(session()->get('user_id'));
 
@@ -34,7 +34,7 @@ class Settings extends BaseController
             return redirect()->back()->with('error', 'Please upload a valid image.');
         }
 
-        // Why: basic security - only allow image types
+        // basic security - only allow image types
         $allowed = ['image/jpg','image/jpeg','image/png','image/webp'];
         if (!in_array($file->getMimeType(), $allowed)) {
             return redirect()->back()->with('error', 'Only JPG, PNG or WEBP images are allowed.');
@@ -49,6 +49,9 @@ class Settings extends BaseController
         $users->update(session()->get('user_id'), [
             'profile_image' => $newName
         ]);
+
+        // update session AFTER newName exists
+        session()->set('profile_image', $newName);
 
         return redirect()->to('/settings')->with('success', 'Profile image updated.');
     }
