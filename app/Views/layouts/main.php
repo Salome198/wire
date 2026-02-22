@@ -17,63 +17,47 @@
     <a class="btn btn-link text-white text-decoration-none" href="<?= base_url('about') ?>">About</a>
     <a class="btn btn-link text-white text-decoration-none" href="<?= base_url('testimonials') ?>">Testimonials</a>
     <a class="btn btn-link text-white text-decoration-none" href="<?= base_url('partners') ?>">Partners</a>
-    <a class="btn btn-outline-light" href="<?= base_url('login') ?>">Login</a>
-    <a class="btn" style="background:#D4AF37; font-weight:700;" href="<?= base_url('register') ?>">Register</a>
+   <?php if (session()->get('is_logged_in')): ?>
 
-  </div>
+  <?php
+    $profileImage = session()->get('profile_image');
+    $avatar = !empty($profileImage)
+      ? base_url('assets/img/profiles/' . $profileImage)
+      : base_url('assets/img/default-profile.png');
+  ?>
+
+  <a class="btn btn-link text-white text-decoration-none"
+     href="<?= base_url('dashboard') ?>">
+     Dashboard
+  </a>
+
+  <a href="<?= base_url('settings') ?>" class="d-flex align-items-center text-decoration-none">
+    <img src="<?= $avatar ?>"
+         alt="Profile"
+         style="width:34px;height:34px;object-fit:cover;border-radius:50%;border:2px solid #D4AF37;">
+  </a>
+
+  <a class="btn btn-outline-light"
+     href="<?= base_url('logout') ?>">
+     Logout
+  </a>
+
+<?php else: ?>
+
+  <a class="btn btn-outline-light" href="<?= base_url('login') ?>">Login</a>
+  <a class="btn" style="background:#D4AF37; font-weight:800;" href="<?= base_url('register') ?>">Register</a>
+
+<?php endif; ?>
 </nav>
 
 <main class="container py-5">
   <?= $this->renderSection('content') ?>
 </main>
 
-<footer class="border-top bg-white py-5 mt-5">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <!-- Left: Brand -->
-            <div class="col-md-4 mb-3 mb-md-0">
-                <span style="color:#0B3D91; font-weight:700; font-size:1.2rem;">
-                    Wire
-                </span>
-                <p class="small text-muted mb-0">
-                    Helping students stay organised, confident and supported.
-                </p>
-            </div>
-
-            <!-- Center: Policies -->
-            <div class="col-md-4 text-md-center mb-3 mb-md-0">
-                <a href="<?= base_url('privacy') ?>" class="text-decoration-none text-muted me-3">
-                    Privacy Policy
-                </a>
-                <a href="<?= base_url('terms') ?>" class="text-decoration-none text-muted">
-                    Terms of Use
-                </a>
-            </div>
-
-            <!-- Right: Social Icons -->
-            <div class="col-md-4 text-md-end">
-                <a href="#" class="text-decoration-none me-3" style="color:#0B3D91;">
-                    <i class="bi bi-instagram fs-5"></i>
-                </a>
-                <a href="#" class="text-decoration-none me-3" style="color:#0B3D91;">
-                    <i class="bi bi-twitter-x fs-5"></i>
-                </a>
-                <a href="#" class="text-decoration-none me-3" style="color:#0B3D91;">
-                    <i class="bi bi-linkedin fs-5"></i>
-                </a>
-                <a href="#" class="text-decoration-none" style="color:#D4AF37;">
-                    <i class="bi bi-envelope-fill fs-5"></i>
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Bottom Copyright -->
-        <div class="text-center mt-4 small text-muted">
-            © 2026 Wire. All rights reserved.
-        </div>
-    </div>
+<footer class="border-top bg-white py-4">
+  <div class="container small text-muted">
+    <span style="color:#0B3D91; font-weight:700;">Wire</span> — helping students stay organised and supported.
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
