@@ -38,7 +38,7 @@
         </p>
 
         <div class="border rounded-3 bg-white d-flex align-items-center justify-content-center" style="height:220px;">
-          <span class="text-muted">Add image / video here</span>
+          <span class="text-muted">Place image here: <br><small>public/assets/img/Develpor_preview.jpg</small></span>
         </div>
       </div>
     </div>
