@@ -26,3 +26,11 @@ $routes->get('dashboard', 'Dashboard::index');
 $routes->get('settings', 'Settings::index');
 $routes->post('settings/profile-image', 'Settings::updateProfileImage');
 $routes->get('logout', 'Auth::logout');
+$routes->get('timetable', 'Timetable::index');
+$routes->post('timetable/create', 'Timetable::create');
+
+$routes->get('reminders', 'Reminder::index');
+$routes->post('reminders/create', 'Reminder::create');
+
+$routes->get('deadlines', 'Deadline::index');
+$routes->post('deadlines/create', 'Deadline::create');
