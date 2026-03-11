@@ -8,10 +8,10 @@
 
   <ul class="nav nav-pills flex-column mb-auto gap-2">
     <li><a href="<?= base_url('dashboard') ?>" class="nav-link text-white">Dashboard</a></li>
-    <li><a href="#" class="nav-link text-white">Reminders</a></li>
+    <li><a href="<?= base_url('reminders') ?>" class="nav-link text-white">Reminders</a></li>
     <li><a href="#" class="nav-link text-white">Tasks</a></li>
-    <li><a href="#" class="nav-link text-white">Timetable</a></li>
-    <li><a href="#" class="nav-link text-white">Deadlines</a></li>
+    <li><a href="<?= base_url('timetable') ?>" class="nav-link text-white">Timetable</a></li>
+    <li><a href="<?= base_url('deadlines') ?>" class="nav-link text-white">Deadlines</a></li>
     <li><a href="#" class="nav-link text-white">Resources</a></li>
     <li><a href="#" class="nav-link text-white">Support</a></li>
     <li><a href="<?= base_url('settings') ?>" class="nav-link text-white">Settings</a></li>
