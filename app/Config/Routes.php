@@ -34,3 +34,5 @@ $routes->post('reminders/create', 'Reminder::create');
 
 $routes->get('deadlines', 'Deadline::index');
 $routes->post('deadlines/create', 'Deadline::create');
+$routes->get('tasks', 'Task::index');
+$routes->post('tasks/create', 'Task::create');
