@@ -18,7 +18,7 @@ class Deadline extends BaseController
                            ->orderBy('due_date', 'ASC')
                            ->findAll();
 
-        return view('student/deadlines', [
+        return view('students/deadlines', [
             'title' => 'Wire | Deadlines',
             'deadlines' => $deadlines
         ]);

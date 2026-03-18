@@ -18,7 +18,7 @@ class Reminder extends BaseController
                            ->orderBy('reminder_date', 'ASC')
                            ->findAll();
 
-        return view('student/reminders', [
+        return view('students/reminders', [
             'title' => 'Wire | Reminders',
             'reminders' => $reminders
         ]);

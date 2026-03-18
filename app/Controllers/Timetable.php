@@ -18,7 +18,7 @@ class Timetable extends BaseController
                        ->orderBy('day_of_week', 'ASC')
                        ->findAll();
 
-        return view('student/timetable', [
+        return view('students/timetable', [
             'title' => 'Wire | Timetable',
             'items' => $items
         ]);
