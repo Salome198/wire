@@ -34,7 +34,14 @@
           <div class="bg-white border rounded-4 p-4 h-100">
             <h3 class="h6 fw-bold" style="color:#0B3D91;"><?= esc($c[0]) ?></h3>
             <p class="text-muted small mb-3"><?= esc($c[1]) ?></p>
-            <a href="#" class="btn btn-sm" style="background:#D4AF37; font-weight:700;">Open</a>
+            <a href="<?=
+    $c[0] == 'Reminders' ? base_url('reminders') :
+    ($c[0] == 'Timetable' ? base_url('timetable') :
+    ($c[0] == 'Deadlines' ? base_url('deadlines') :
+    '#'))
+?>" class="btn btn-sm" style="background:#D4AF37; font-weight:700;">
+    Open
+</a>
           </div>
         </div>
       <?php endforeach; ?>
