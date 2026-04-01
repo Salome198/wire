@@ -7,6 +7,9 @@
   </div>
 
   <div class="col-lg-9">
+     <a href="<?= base_url('dashboard') ?>" class="btn btn-outline-secondary mb-3">
+            ← Back to Dashboard
+        </a>
     <div class="border rounded-4 p-4" style="background:#F0FFF4; border-color:#2E7D32;">
       <h1 class="h4 fw-bold mb-1" style="color:#2E7D32;">Settings</h1>
       <p class="text-muted mb-0">View your profile information and update your image.</p>

@@ -36,9 +36,12 @@
             <p class="text-muted small mb-3"><?= esc($c[1]) ?></p>
             <a href="<?=
     $c[0] == 'Reminders' ? base_url('reminders') :
+    ($c[0] == 'Tasks' ? base_url('tasks') :
     ($c[0] == 'Timetable' ? base_url('timetable') :
     ($c[0] == 'Deadlines' ? base_url('deadlines') :
-    '#'))
+    ($c[0] == 'Resources' ? base_url('resources') :
+    ($c[0] == 'Support' ? base_url('support') :
+    '#')))))
 ?>" class="btn btn-sm" style="background:#D4AF37; font-weight:700;">
     Open
 </a>

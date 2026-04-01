@@ -7,6 +7,9 @@
     </div>
 
     <div class="col-lg-9">
+         <a href="<?= base_url('dashboard') ?>" class="btn btn-outline-secondary mb-3">
+            ← Back to Dashboard
+        </a>
         <div class="bg-white border rounded-4 p-4 mb-4" style="border-top:6px solid #D4AF37;">
             <h1 class="h4 fw-bold" style="color:#0B3D91;">Reminders</h1>
             <p class="text-muted mb-0">Create reminders for important academic and personal tasks.</p>
