@@ -39,3 +39,8 @@ $routes->post('tasks/create', 'Task::create');
 
 $routes->get('resources', 'Resource::index');
 $routes->post('resources/create', 'Resource::create');
+$routes->get('support', 'Support::index');
+$routes->post('support/create', 'Support::create');
+
+$routes->get('support/getting-started', 'SupportHelp::gettingStarted');
+$routes->get('support/account-help', 'SupportHelp::accountHelp');

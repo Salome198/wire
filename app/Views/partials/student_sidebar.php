@@ -13,7 +13,7 @@
     <li><a href="<?= base_url('timetable') ?>" class="nav-link text-white">Timetable</a></li>
     <li><a href="<?= base_url('deadlines') ?>" class="nav-link text-white">Deadlines</a></li>
     <li><a href="<?= base_url('resources') ?>" class="nav-link text-white">Resources</a></li>
-    <li><a href="#" class="nav-link text-white">Support</a></li>
+    <li><a href="<?= base_url('support') ?>" class="nav-link text-white">Support</a></li>
     <li><a href="<?= base_url('settings') ?>" class="nav-link text-white">Settings</a></li>
   </ul>
 
