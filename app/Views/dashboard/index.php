@@ -51,20 +51,25 @@
     </div>
 
     <!-- Analytics -->
-    <div class="bg-white border rounded-4 p-4">
-      <h2 class="h6 fw-bold mb-3" style="color:#0B3D91;">Most used tools (analytics)</h2>
+    <div class="bg-white border rounded-4 p-4 shadow-sm">
+    <h2 class="h6 fw-bold mb-3" style="color:#0B3D91;">Most Used Tools</h2>
 
-      <div class="row g-3">
+    <div class="row g-3">
         <?php foreach ($usage as $tool => $count): ?>
-          <div class="col-md-6 col-xl-3">
-            <div class="border rounded-4 p-3">
-              <div class="small text-muted"><?= esc($tool) ?></div>
-              <div class="fs-4 fw-bold" style="color:#0B3D91;"><?= esc($count) ?></div>
-              <div class="small text-muted">opens this month</div>
+            <div class="col-md-6 col-xl-4">
+                <div class="border rounded-4 p-3 h-100">
+                    <div class="small text-muted text-capitalize"><?= esc($tool) ?></div>
+                    <div class="fs-4 fw-bold" style="color:#0B3D91;"><?= esc($count) ?></div>
+                    <div class="small text-muted">times opened</div>
+                </div>
             </div>
-          </div>
         <?php endforeach; ?>
-      </div>
+    </div>
+
+    <p class="text-muted small mt-3 mb-0">
+        This section updates based on how often you open features in your dashboard.
+    </p>
+</div>
 
       <p class="text-muted small mt-3 mb-0">
         This will later update automatically based on real feature usage.

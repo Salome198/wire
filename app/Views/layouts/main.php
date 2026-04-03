@@ -23,7 +23,7 @@
     $profileImage = session()->get('profile_image');
     $avatar = !empty($profileImage)
       ? base_url('assets/img/profiles/' . $profileImage)
-      : base_url('assets/img/default-profile.png');
+      : base_url('assets/img/profile_avatar.jpeg');
   ?>
 
   <a class="btn btn-link text-white text-decoration-none"
