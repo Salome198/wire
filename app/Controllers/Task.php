@@ -12,6 +12,8 @@ class Task extends BaseController
             return redirect()->to('/login');
         }
 
+        $this->trackFeatureUsage('tasks');
+
         $model = new TaskModel();
 
         $tasks = $model->where('user_id', session()->get('user_id'))

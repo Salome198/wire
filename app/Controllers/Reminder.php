@@ -11,7 +11,8 @@ class Reminder extends BaseController
         if (!session()->get('is_logged_in')) {
             return redirect()->to('/login');
         }
-
+        $this->trackFeatureUsage('reminders');
+        
         $model = new ReminderModel();
 
         $reminders = $model->where('user_id', session()->get('user_id'))
