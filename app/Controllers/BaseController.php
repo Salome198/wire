@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\FeatureUsageModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -42,4 +43,17 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
         // $this->session = service('session');
     }
+     protected function trackFeatureUsage(string $featureName): void
+{
+    if (!session()->get('is_logged_in')) {
+        return;
+    }
+
+    $usageModel = new FeatureUsageModel();
+
+    $usageModel->insert([
+        'user_id' => session()->get('user_id'),
+        'feature_name' => $featureName
+    ]);
+}
 }
