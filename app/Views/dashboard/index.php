@@ -2,80 +2,95 @@
 <?= $this->section('content') ?>
 
 <div class="row g-4">
-  <!-- Sidebar -->
-  <div class="col-lg-3">
-    <?= $this->include('partials/student_sidebar') ?>
-  </div>
 
-  <!-- Main area -->
-  <div class="col-lg-9">
-    <div class="bg-white border rounded-4 p-4 mb-4" style="border-top:6px solid #D4AF37;">
-      <h1 class="h4 fw-bold mb-1" style="color:#0B3D91;">
-        Welcome, <?= esc(session()->get('first_name')) ?> 👋
-      </h1>
-      <p class="text-muted mb-0">Here is your dashboard overview.</p>
+    <div class="col-lg-3">
+        <?= $this->include('partials/student_sidebar') ?>
     </div>
 
-    <!-- Feature cards -->
-    <div class="row g-3 mb-4">
-      <?php
-        $cards = [
-          ['Reminders','Set reminders for assignments and important tasks.'],
-          ['Tasks','Plan and track what you need to complete this week.'],
-          ['Timetable','View your study schedule at a glance.'],
-          ['Deadlines','Track assessments and submission dates.'],
-          ['Resources','Save useful links, guides and learning tools.'],
-          ['Support','Access wellbeing and student support information.'],
-        ];
-      ?>
+    <div class="col-lg-9">
 
-      <?php foreach ($cards as $c): ?>
-        <div class="col-md-6 col-xl-4">
-          <div class="bg-white border rounded-4 p-4 h-100">
-            <h3 class="h6 fw-bold" style="color:#0B3D91;"><?= esc($c[0]) ?></h3>
-            <p class="text-muted small mb-3"><?= esc($c[1]) ?></p>
-            <a href="<?=
-    $c[0] == 'Reminders' ? base_url('reminders') :
-    ($c[0] == 'Tasks' ? base_url('tasks') :
-    ($c[0] == 'Timetable' ? base_url('timetable') :
-    ($c[0] == 'Deadlines' ? base_url('deadlines') :
-    ($c[0] == 'Resources' ? base_url('resources') :
-    ($c[0] == 'Support' ? base_url('support') :
-    '#')))))
-?>" class="btn btn-sm" style="background:#D4AF37; font-weight:700;">
-    Open
-</a>
-          </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
+        <!-- Welcome -->
+        <div class="wire-card p-4 mb-4">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <h1 class="mb-2 fw-bold" style="color:#0B3D91;">
+                        Welcome back, <?= esc(session()->get('first_name')) ?> 👋
+                    </h1>
+                    <p class="text-muted mb-0">
+                        Here is your dashboard overview, including your most used tools and quick access to key features.
+                    </p>
+                </div>
 
-    <!-- Analytics -->
-    <div class="bg-white border rounded-4 p-4 shadow-sm">
-    <h2 class="h6 fw-bold mb-3" style="color:#0B3D91;">Most Used Tools</h2>
-
-    <div class="row g-3">
-        <?php foreach ($usage as $tool => $count): ?>
-            <div class="col-md-6 col-xl-4">
-                <div class="border rounded-4 p-3 h-100">
-                    <div class="small text-muted text-capitalize"><?= esc($tool) ?></div>
-                    <div class="fs-4 fw-bold" style="color:#0B3D91;"><?= esc($count) ?></div>
-                    <div class="small text-muted">times opened</div>
+                <div class="px-3 py-2 rounded-3" style="background:#fff8e1; color:#8a6d1f; font-weight:600;">
+                    Stay organised today
                 </div>
             </div>
-        <?php endforeach; ?>
-    </div>
+        </div>
 
-    <p class="text-muted small mt-3 mb-0">
-        This section updates based on how often you open features in your dashboard.
-    </p>
-</div>
+        <!-- Feature cards -->
+        <div class="row g-3 mb-4">
+            <?php
+            $cards = [
+                ['Reminders', 'Set reminders for assignments and important tasks.'],
+                ['Tasks', 'Plan and track what you need to complete this week.'],
+                ['Timetable', 'View your study schedule at a glance.'],
+                ['Deadlines', 'Track assessments and submission dates.'],
+                ['Resources', 'Save useful links, guides and learning tools.'],
+                ['Support', 'Access wellbeing and student support information.'],
+            ];
+            ?>
 
-      <p class="text-muted small mt-3 mb-0">
-        This will later update automatically based on real feature usage.
-      </p>
+            <?php foreach ($cards as $c): ?>
+                <div class="col-md-6 col-xl-4">
+                    <div class="wire-card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h6 fw-bold mb-0" style="color:#0B3D91;"><?= esc($c[0]) ?></h3>
+                            <span class="rounded-circle d-inline-block" style="width:12px; height:12px; background:#D4AF37;"></span>
+                        </div>
+
+                        <p class="text-muted small mb-4"><?= esc($c[1]) ?></p>
+
+                        <a href="<?=
+                            $c[0] == 'Reminders' ? base_url('reminders') :
+                            ($c[0] == 'Tasks' ? base_url('tasks') :
+                            ($c[0] == 'Timetable' ? base_url('timetable') :
+                            ($c[0] == 'Deadlines' ? base_url('deadlines') :
+                            ($c[0] == 'Resources' ? base_url('resources') :
+                            ($c[0] == 'Support' ? base_url('support') :
+                            '#')))))
+                        ?>" class="btn wire-btn-gold btn-sm px-3">
+                            Open
+                        </a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Analytics -->
+        <div class="wire-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h6 fw-bold mb-0" style="color:#0B3D91;">Most Used Tools</h2>
+                <span class="small text-muted">Live from your activity</span>
+            </div>
+
+            <div class="row g-3">
+                <?php foreach ($usage as $tool => $count): ?>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="wire-soft-card p-3 h-100">
+                            <div class="small text-muted text-capitalize mb-2"><?= esc($tool) ?></div>
+                            <div class="wire-stat-number"><?= esc($count) ?></div>
+                            <div class="small text-muted">times opened</div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <p class="text-muted small mt-3 mb-0">
+                This section updates based on how often you open features in your dashboard.
+            </p>
+        </div>
+
     </div>
-  </div>
 </div>
 
 <?= $this->endSection() ?>
