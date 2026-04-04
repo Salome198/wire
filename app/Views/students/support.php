@@ -49,7 +49,7 @@
                     <div class="border rounded-4 p-3 h-100">
                         <div class="fw-bold">Wellbeing Support</div>
                         <p class="small text-muted">Mental health, counselling, and wellbeing services.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Open</a>
+                        <a href="<?= base_url('support/wellbeing') ?>" class="btn btn-sm btn-outline-primary">Open</a>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                     <div class="border rounded-4 p-3 h-100">
                         <div class="fw-bold">Academic Skills</div>
                         <p class="small text-muted">Writing support, study skills and assignment guidance.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Open</a>
+                        <a href="<?= base_url('support/academic') ?>" class="btn btn-sm btn-outline-primary">Open</a>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                     <div class="border rounded-4 p-3 h-100">
                         <div class="fw-bold">Financial Support</div>
                         <p class="small text-muted">Budgeting, hardship support and student finance guidance.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Open</a>
+                        <a href="<?= base_url('support/academic') ?>" class="btn btn-sm btn-outline-primary">Open</a>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                     <div class="border rounded-4 p-3 h-100">
                         <div class="fw-bold">Careers Support</div>
                         <p class="small text-muted">CV support, employability guidance and job help.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Open</a>
+                        <a href="<?= base_url('support/careers') ?>" class="btn btn-sm btn-outline-primary">Open</a>
                     </div>
                 </div>
             </div>

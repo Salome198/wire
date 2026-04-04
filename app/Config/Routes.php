@@ -44,3 +44,8 @@ $routes->post('support/create', 'Support::create');
 
 $routes->get('support/getting-started', 'SupportHelp::gettingStarted');
 $routes->get('support/account-help', 'SupportHelp::accountHelp');
+
+$routes->get('support/wellbeing', 'Support::wellbeing');
+$routes->get('support/academic', 'Support::academic');
+$routes->get('support/financial', 'Support::financial');
+$routes->get('support/careers', 'Support::careers');
