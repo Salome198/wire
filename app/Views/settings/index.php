@@ -29,7 +29,7 @@
           <?php
             $img = !empty($user['profile_image'])
               ? base_url('assets/img/profiles/' . $user['profile_image'])
-              : base_url('assets/img/profile_avatar.jpeg');
+              : base_url('assets/img/profiles/profile_avatar.jpeg');
           ?>
           <img src="<?= $img ?>" class="img-fluid rounded-circle border"
                style="width:160px;height:160px;object-fit:cover;" alt="Profile image">
