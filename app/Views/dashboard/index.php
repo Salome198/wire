@@ -27,6 +27,67 @@
             </div>
         </div>
 
+        <div class="wire-card p-4 mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h6 fw-bold mb-0" style="color:#0B3D91;">Upcoming Notifications</h2>
+        <span class="small text-muted">Live from your records</span>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="wire-soft-card p-3 h-100">
+                <div class="fw-bold mb-2" style="color:#0B3D91;">Next Task</div>
+
+                <?php if (!empty($nextTask)): ?>
+                    <div class="small text-muted mb-1"><?= esc($nextTask['title']) ?></div>
+                    <div class="small">
+                        Due: <?= !empty($nextTask['due_date']) ? esc($nextTask['due_date']) : 'No due date set' ?>
+                    </div>
+                    <div class="small text-muted mt-1">Status: <?= esc($nextTask['status']) ?></div>
+                <?php else: ?>
+                    <div class="small text-muted">No upcoming tasks.</div>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="wire-soft-card p-3 h-100">
+                <div class="fw-bold mb-2" style="color:#0B3D91;">Next Reminder</div>
+
+                <?php if (!empty($nextReminder)): ?>
+                    <div class="small text-muted mb-1"><?= esc($nextReminder['title']) ?></div>
+                    <div class="small">
+                        Date: <?= esc($nextReminder['reminder_date']) ?>
+                    </div>
+                    <?php if (!empty($nextReminder['reminder_time'])): ?>
+                        <div class="small text-muted mt-1">Time: <?= esc($nextReminder['reminder_time']) ?></div>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <div class="small text-muted">No upcoming reminders.</div>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="wire-soft-card p-3 h-100">
+                <div class="fw-bold mb-2" style="color:#0B3D91;">Next Deadline</div>
+
+                <?php if (!empty($nextDeadline)): ?>
+                    <div class="small text-muted mb-1"><?= esc($nextDeadline['title']) ?></div>
+                    <div class="small">
+                        Due: <?= esc($nextDeadline['due_date']) ?>
+                    </div>
+                    <?php if (!empty($nextDeadline['module_name'])): ?>
+                        <div class="small text-muted mt-1"><?= esc($nextDeadline['module_name']) ?></div>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <div class="small text-muted">No upcoming deadlines.</div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
         <!-- Feature cards -->
         <div class="row g-3 mb-4">
             <?php

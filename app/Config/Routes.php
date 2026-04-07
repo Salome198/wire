@@ -49,3 +49,5 @@ $routes->get('support/wellbeing', 'Support::wellbeing');
 $routes->get('support/academic', 'Support::academic');
 $routes->get('support/financial', 'Support::financial');
 $routes->get('support/careers', 'Support::careers');
+
+$routes->post('support/submit-request', 'SupportHelp::submitRequest');
