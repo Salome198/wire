@@ -51,3 +51,5 @@ $routes->get('support/financial', 'Support::financial');
 $routes->get('support/careers', 'Support::careers');
 
 $routes->post('support/submit-request', 'SupportHelp::submitRequest');
+$routes->get('admin', 'Admin::index');
+$routes->get('calendar', 'Calendar::index');

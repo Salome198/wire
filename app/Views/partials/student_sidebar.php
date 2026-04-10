@@ -10,6 +10,7 @@
 
     <ul class="nav flex-column gap-2 mb-4">
         <li><a href="<?= base_url('dashboard') ?>" class="nav-link text-white px-3 py-2 rounded-3">Dashboard</a></li>
+        <li><a href="<?= base_url('calendar') ?>" class="nav-link text-white px-3 py-2 rounded-3">Calender</a></li>
         <li><a href="<?= base_url('reminders') ?>" class="nav-link text-white px-3 py-2 rounded-3">Reminders</a></li>
         <li><a href="<?= base_url('tasks') ?>" class="nav-link text-white px-3 py-2 rounded-3">Tasks</a></li>
         <li><a href="<?= base_url('timetable') ?>" class="nav-link text-white px-3 py-2 rounded-3">Timetable</a></li>

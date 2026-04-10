@@ -75,6 +75,10 @@ public function financial()
         return redirect()->to('/login');
     }
 
+    if (session()->get('role') !== 'student') {
+        return redirect()->to('/admin');
+    }
+
     return view('students/support_financial', [
         'title' => 'Wire | Financial Support'
     ]);

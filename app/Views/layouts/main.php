@@ -89,11 +89,15 @@
      Dashboard
   </a>
 
-  <a href="<?= base_url('settings') ?>" class="d-flex align-items-center text-decoration-none">
-    <img src="<?= $avatar ?>"
-         alt="Profile"
-         style="width:34px;height:34px;object-fit:cover;border-radius:50%;border:2px solid #D4AF37;">
-  </a>
+<?php
+    $profileLink = session()->get('role') === 'admin'
+        ? base_url('admin')
+        : base_url('settings');
+?>
+
+<a href="<?= $profileLink ?>" class="d-inline-flex align-items-center text-decoration-none">
+    <img src="<?= esc($avatar) ?>" alt="Profile" class="wire-topbar-avatar">
+</a>
 
   <a class="btn btn-outline-light"
      href="<?= base_url('logout') ?>">

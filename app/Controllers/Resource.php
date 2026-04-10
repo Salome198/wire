@@ -31,6 +31,10 @@ class Resource extends BaseController
             return redirect()->to('/login');
         }
 
+        if (session()->get('role') !== 'student') {
+            return redirect()->to('/admin');
+        }
+
         $model = new ResourceModel();
 
         $model->insert([

@@ -10,13 +10,14 @@ class usermodel extends Model
     protected $primaryKey = 'id';
 
     protected $allowedFields = [
-        'first_name',
-        'last_name',
-        'email',
-        'password_hash',
-        'profile_image',
-        'created_at'
+    'first_name',
+    'last_name',
+    'email',
+    'password_hash',
+    'profile_image',
+    'role',
+    'created_at'
     ];
-
+    
     protected $useTimestamps = false; // we use created_at default in SQL
 }

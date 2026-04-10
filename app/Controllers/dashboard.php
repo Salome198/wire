@@ -2,22 +2,32 @@
 
 namespace App\Controllers;
 use App\Models\FeatureUsageModel;
+use App\Models\TaskModel;
+use App\Models\ReminderModel;
+use App\Models\DeadlineModel;
+use App\Models\TimetableModel;
 
 class Dashboard extends BaseController
 {
     public function index()
-    {
-        // Why: prevent unauthorised access. Only logged-in users should see dashboard.
-        if (!session()->get('is_logged_in')) {
-            return redirect()->to('/login');
-        }
+{
+    if (!session()->get('is_logged_in')) {
+        return redirect()->to('/login');
+    }
+    if (session()->get('role') !== 'student') {
+    return redirect()->to('/admin');
+    }
 
-        // Why: Analytics is part of dashboard. For now we use placeholder values.
-        // Later, this will come from database usage logs.
-        $userId = session()->get('user_id');
+    $userId = session()->get('user_id');
 
+    // Models
+    $taskModel = new TaskModel();
+    $reminderModel = new ReminderModel();
+    $deadlineModel = new DeadlineModel();
+    $timetableModel = new TimetableModel();
     $featureUsageModel = new FeatureUsageModel();
 
+    // Real analytics usage
     $usageRows = $featureUsageModel
         ->select('feature_name, COUNT(*) as total')
         ->where('user_id', $userId)
@@ -37,9 +47,29 @@ class Dashboard extends BaseController
         $usage[$row['feature_name']] = (int) $row['total'];
     }
 
+    // Upcoming notifications
+    $nextTask = $taskModel
+        ->where('user_id', $userId)
+        ->where('status !=', 'Completed')
+        ->orderBy('due_date', 'ASC')
+        ->first();
+
+    $nextReminder = $reminderModel
+        ->where('user_id', $userId)
+        ->orderBy('reminder_date', 'ASC')
+        ->first();
+
+    $nextDeadline = $deadlineModel
+        ->where('user_id', $userId)
+        ->orderBy('due_date', 'ASC')
+        ->first();
+
     return view('dashboard/index', [
         'title' => 'Wire | Dashboard',
         'usage' => $usage,
+        'nextTask' => $nextTask,
+        'nextReminder' => $nextReminder,
+        'nextDeadline' => $nextDeadline,
     ]);
-    }
+}
 }

@@ -27,14 +27,21 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Invalid login details. Please try again.');
         }
 
-        session()->set([
-            'user_id'      => $user['id'],
-            'first_name'   => $user['first_name'],
-            'last_name'    => $user['last_name'],
-            'is_logged_in' => true,
-        ]);
+       session()->set([
+        'user_id' => $user['id'],
+        'first_name' => $user['first_name'],
+        'last_name' => $user['last_name'],
+        'email' => $user['email'],
+        'profile_image' => $user['profile_image'] ?? null,
+        'role' => $user['role'],
+        'is_logged_in' => true,
+    ]);
 
-        return redirect()->to('/dashboard');
+       if ($user['role'] === 'admin') {
+     return redirect()->to('/admin');
+    }
+
+    return redirect()->to('/dashboard');
     }
 
     public function register()
@@ -73,12 +80,13 @@ class Auth extends BaseController
         }
 
         $users->insert([
-            'first_name'    => $first,
-            'last_name'     => $last,
-            'email'         => $email,
-            'password_hash' => password_hash($pass, PASSWORD_DEFAULT),
-            'profile_image' => null
-        ]);
+        'first_name' => $first,
+        'last_name' => $last,
+        'email' => $email,
+        'password_hash' => password_hash($pass, PASSWORD_DEFAULT),
+        'profile_image' => null,
+        'role' => 'student'
+    ]);
 
         return redirect()->to('/login')->with('success', 'Account created successfully. Please log in.');
     }

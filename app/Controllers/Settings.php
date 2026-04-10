@@ -28,6 +28,10 @@ class Settings extends BaseController
             return redirect()->to('/login');
         }
 
+        if (session()->get('role') !== 'student') {
+            return redirect()->to('/admin');
+        }
+
         $file = $this->request->getFile('profile_image');
 
         if (!$file || !$file->isValid()) {

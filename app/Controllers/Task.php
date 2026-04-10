@@ -12,6 +12,11 @@ class Task extends BaseController
             return redirect()->to('/login');
         }
 
+
+        if (session()->get('role') !== 'student') {
+            return redirect()->to('/admin');
+        }
+
         $this->trackFeatureUsage('tasks');
 
         $model = new TaskModel();

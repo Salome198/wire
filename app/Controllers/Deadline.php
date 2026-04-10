@@ -11,6 +11,10 @@ class Deadline extends BaseController
         if (!session()->get('is_logged_in')) {
             return redirect()->to('/login');
         }
+        
+        if (session()->get('role') !== 'student') {
+    return redirect()->to('/admin');
+        }
         $this->trackFeatureUsage('deadlines');
 
         $model = new DeadlineModel();
