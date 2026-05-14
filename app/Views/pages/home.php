@@ -1,23 +1,34 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 
-<!-- HERO -->
-<section class="bg-white border rounded-4 p-5" style="border-top:6px solid #D4AF37;">
+<section class="bg-white border rounded-4 p-5 mt-4">
   <div class="row align-items-center g-4">
+    
     <div class="col-lg-7">
-      <h1 class="display-6 fw-bold" style="color:#0B3D91;">Wire - stay organised, supported and on track.</h1>
+      <h1 class="fw-bold mb-3" style="color:#0B3D91; font-size:3rem; line-height:1.15;">
+        Wire - stay organised, supported and on track.
+      </h1>
 
-      <p class="lead text-muted mt-3">
-        Wire helps students keep everything in one place — reminders, deadlines, and useful support links
-        so you can focus on learning without feeling overwhelmed.
+      <p class="lead mb-0" style="max-width:720px;">
+        Wire helps students keep everything in one place — reminders, deadlines,
+        and useful support links so you can focus on learning without feeling
+        overwhelmed.
       </p>
 
       <div class="d-flex flex-wrap gap-2 mt-4">
-        <!-- Keep ONE main action button only -->
-        <a class="btn btn-lg" style="background:#D4AF37; font-weight:800;" href="<?= site_url('register') ?>">
-          Get started
+        <?php if (!session()->get('user_id')): ?>
+          <a class="btn btn-lg" style="background:#D4AF37; font-weight:800;" href="<?= site_url('register') ?>">
+            Get started
+          </a>
+        <?php else: ?>
+          <a class="btn btn-lg" style="background:#D4AF37; font-weight:800;" href="<?= site_url('dashboard') ?>">
+            Go to dashboard
+          </a>
+        <?php endif; ?>
+
+        <a class="btn btn-lg btn-outline-primary" href="<?= site_url('about') ?>">
+          Learn more
         </a>
-        <a class="btn btn-lg btn-outline-primary" href="<?= site_url('about') ?>">Learn more</a>
       </div>
 
       <div class="small mt-3" style="color:#0B3D91;">
@@ -25,25 +36,29 @@
       </div>
     </div>
 
-    <!-- IMAGE / VIDEO PLACEHOLDER -->
     <div class="col-lg-5">
-      <div class="border rounded-4 p-4" style="background:#F3F7FF;">
-        <div class="d-flex justify-content-between align-items-center">
-          <strong style="color:#0B3D91;">Preview</strong>
-          <span class="badge" style="background:#0B3D91;">Coming soon</span>
+      <div class="border rounded-4 p-4 h-100" style="background:#F3F6FB;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0 fw-bold" style="color:#0B3D91;">Preview</h5>
+          <span class="badge rounded-pill" style="background:#0B3D91;">IT'S HERE!!</span>
         </div>
 
-        <p class="text-muted mt-2 mb-3">
-          This space will display screenshots, a short demo video, or a slide carousel showing the student dashboard.
-        </p>
+        <p class="text-muted mb-3">Sign up today and have your own</p>
 
-        <div class="border rounded-3 bg-white d-flex align-items-center justify-content-center" style="height:220px;">
-          <span class="text-muted">Place image here: <br><small>public/assets/img/Develpor_preview.jpg</small></span>
+        <div class="border rounded-3 bg-white p-3 text-center" style="min-height:260px;">
+          <img
+            src="<?= base_url('assets/img/dashboardpreview.png') ?>"
+            class="img-fluid rounded-3"
+            alt="Wire dashboard preview"
+            style="max-height:320px; width:auto; object-fit:contain;">
         </div>
       </div>
     </div>
+
   </div>
 </section>
+
+   
 
 <!-- FEATURES -->
 <section class="row g-4 mt-4">
@@ -106,6 +121,7 @@
 </section>
 
 <!-- CTA (no extra login/register buttons) -->
+<?php if (!session()->get('user_id')): ?>
 <section class="bg-white border rounded-4 p-5 mt-4">
   <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
     <div>
@@ -119,5 +135,20 @@
     </div>
   </div>
 </section>
+<?php else: ?>
+<section class="bg-white border rounded-4 p-5 mt-4">
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <div>
+      <h2 class="h5 fw-bold mb-1" style="color:#0B3D91;">You’re already signed in</h2>
+      <p class="text-muted mb-0">Go to your dashboard to manage your timetable, reminders, calendar, and support tools.</p>
+    </div>
+    <div>
+      <a class="btn btn-lg" style="background:#D4AF37; font-weight:800;" href="<?= site_url('dashboard') ?>">
+        Go to dashboard
+      </a>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
 
 <?= $this->endSection() ?>

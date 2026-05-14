@@ -13,6 +13,7 @@
         <li><a href="<?= base_url('calendar') ?>" class="nav-link text-white px-3 py-2 rounded-3">Calender</a></li>
         <li><a href="<?= base_url('reminders') ?>" class="nav-link text-white px-3 py-2 rounded-3">Reminders</a></li>
         <li><a href="<?= base_url('tasks') ?>" class="nav-link text-white px-3 py-2 rounded-3">Tasks</a></li>
+        <li><a href="<?= base_url('campus-map') ?>" class="nav-link text-white px-3 py-2 rounded-3">Campus Map</a></li>
         <li><a href="<?= base_url('timetable') ?>" class="nav-link text-white px-3 py-2 rounded-3">Timetable</a></li>
         <li><a href="<?= base_url('deadlines') ?>" class="nav-link text-white px-3 py-2 rounded-3">Deadlines</a></li>
         <li><a href="<?= base_url('resources') ?>" class="nav-link text-white px-3 py-2 rounded-3">Resources</a></li>

@@ -116,9 +116,43 @@
   <?= $this->renderSection('content') ?>
 </main>
 
-<footer class="border-top bg-white py-4">
-  <div class="container small text-muted">
-    <span style="color:#0B3D91; font-weight:700;">Wire</span> — helping students stay organised and supported.
+<footer class="border-top bg-white py-4 mt-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Brand -->
+      <div class="col-md-4">
+        <h6 style="color:#0B3D91; font-weight:700;">Wire</h6>
+        <p class="small text-muted mb-2">
+          Helping students stay organised, manage deadlines, and access support in one place.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4">
+        <h6 style="color:#0B3D91; font-weight:700;">Contact</h6>
+        <p class="small text-muted mb-1">📍 Highgate Avenue, Wolverhampton, UK</p>
+        <p class="small text-muted mb-1">📞 +44 1902 537933</p>
+        <p class="small text-muted mb-0">✉️ support@wirestudentapp.com</p>
+      </div>
+
+      <!-- Socials -->
+      <div class="col-md-4">
+        <h6 style="color:#0B3D91; font-weight:700;">Connect</h6>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-decoration-none" style="color:#0B3D91;">Instagram</a>
+          <a href="#" class="text-decoration-none" style="color:#0B3D91;">LinkedIn</a>
+          <a href="#" class="text-decoration-none" style="color:#0B3D91;">Email</a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="my-3">
+
+    <div class="small text-muted text-center">
+      © <?= date('Y') ?> Wire — helping students stay organised and supported.
+    </div>
   </div>
 </footer>
 

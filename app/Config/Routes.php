@@ -52,4 +52,29 @@ $routes->get('support/careers', 'Support::careers');
 
 $routes->post('support/submit-request', 'SupportHelp::submitRequest');
 $routes->get('admin', 'Admin::index');
+$routes->get('/calendar', 'Calendar::index');
 $routes->get('calendar', 'Calendar::index');
+$routes->get('calendar/connectGoogle', 'Calendar::connectGoogle');
+
+$routes->get('calendar/googleCallback', 'Calendar::googleCallback');
+$routes->get('calendar/disconnectGoogle', 'Calendar::disconnectGoogle');
+ 
+$routes->get('calendar/connectOutlook', 'Calendar::connectOutlook');
+$routes->get('calendar/outlookCallback', 'Calendar::outlookCallback');
+$routes->get('calendar/disconnectOutlook', 'Calendar::disconnectOutlook');
+
+$routes->get('campus-map', 'CampusMap::index');
+
+$routes->get('testimonials', 'Testimonials::index');
+$routes->post('testimonials/submit', 'Testimonials::submit');
+
+$routes->get('timetable/api-list', 'Timetable::apiList');
+$routes->post('timetable/api-create', 'Timetable::apiCreate');
+$routes->post('api/login', 'Auth::apiLogin');
+$routes->post('api/register', 'Auth::apiRegister');
+$routes->get('reminders/api-list', 'Reminder::apiList');
+$routes->post('reminders/api-create', 'Reminder::apiCreate');
+$routes->post('timetable/api-delete', 'Timetable::apiDelete');
+$routes->post('reminders/api-delete', 'Reminder::apiDelete');
+$routes->get('calendar/api-list', 'Calendar::apiList');
+$routes->post('api/update-profile', 'Auth::updateProfile');

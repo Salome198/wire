@@ -13,15 +13,16 @@ class Reminder extends BaseController
         }
 
         if (session()->get('role') !== 'student') {
-    return redirect()->to('/admin');
+            return redirect()->to('/admin');
         }
-        
+
         $this->trackFeatureUsage('reminders');
-        
+
         $model = new ReminderModel();
 
         $reminders = $model->where('user_id', session()->get('user_id'))
                            ->orderBy('reminder_date', 'ASC')
+                           ->orderBy('reminder_time', 'ASC')
                            ->findAll();
 
         return view('students/reminders', [
@@ -47,5 +48,64 @@ class Reminder extends BaseController
         ]);
 
         return redirect()->to('/reminders')->with('success', 'Reminder created.');
+    }
+
+    public function apiList()
+    {
+        $userId = $this->request->getGet('user_id');
+
+        $model = new ReminderModel();
+
+        $reminders = $model->where('user_id', $userId)
+                           ->orderBy('reminder_date', 'ASC')
+                           ->orderBy('reminder_time', 'ASC')
+                           ->findAll();
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'items' => $reminders
+        ]);
+    }
+
+    public function apiDelete()
+{
+    $id = $this->request->getPost('id');
+    $userId = $this->request->getPost('user_id');
+
+    if (!$id || !$userId) {
+        return $this->response->setJSON([
+            'status' => 'error',
+            'message' => 'Missing reminder.'
+        ]);
+    }
+
+    $model = new ReminderModel();
+
+    $model->where('id', $id)
+          ->where('user_id', $userId)
+          ->delete();
+
+    return $this->response->setJSON([
+        'status' => 'success',
+        'message' => 'Reminder deleted.'
+    ]);
+}
+
+    public function apiCreate()
+    {
+        $model = new ReminderModel();
+
+        $model->insert([
+            'user_id'       => $this->request->getPost('user_id'),
+            'title'         => $this->request->getPost('title'),
+            'description'   => $this->request->getPost('description'),
+            'reminder_date' => $this->request->getPost('reminder_date'),
+            'reminder_time' => $this->request->getPost('reminder_time'),
+        ]);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Reminder added'
+        ]);
     }
 }

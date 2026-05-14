@@ -5,14 +5,60 @@
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
         <h2 class="mb-0">My Calendar</h2>
         <div class="sync-actions">
-            <button class="btn btn-outline-success btn-sm" disabled title="Google sync will be added in Phase 2">
-                Sync Google Calendar
-            </button>
-            <button class="btn btn-outline-primary btn-sm" disabled title="Microsoft Outlook sync will be added in Phase 2">
+            <div class="d-flex gap-2">
+            <?php if (empty($googleConnection)): ?>
+                <!-- Only show Google sync button if Google is not connected -->
+                <a href="<?= base_url('calendar/connectGoogle') ?>" class="btn btn-outline-success btn-sm">
+                    Sync Google Calendar
+                </a>
+            <?php endif; ?>
+
+            <!-- Outlook remains visible because it may be connected later -->
+            <a href="<?= base_url('calendar/connectOutlook') ?>" class="btn btn-outline-primary btn-sm">
                 Sync Outlook Calendar
-            </button>
+            </a>
+            </div>
         </div>
     </div>
+
+    <?php if (!empty($googleConnection)): ?>
+    <!-- Google connection status banner -->
+    <div class="alert alert-success d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+        <div>
+            <!-- Show the connected Gmail account -->
+            <?php
+                $email = $googleConnection['provider_email'];
+                $masked = substr($email, 0, 5) . '*****' . strstr($email, '@');
+                ?>
+
+                <strong>Connected as:</strong> <?= esc($masked) ?><br>
+
+            <!-- Show the last successful sync time -->
+            <small class="text-muted">
+                Last synced: <?= date('d M Y, H:i', strtotime($googleConnection['last_synced_at'])) ?>
+            </small>
+        </div>
+
+        <div class="d-flex gap-2">
+            <!-- Sync again button -->
+            <a href="<?= base_url('calendar/connectGoogle') ?>" class="btn btn-outline-success btn-sm">
+                Sync Again
+            </a>
+
+            <!-- Disconnect button -->
+            <a href="<?= base_url('calendar/disconnectGoogle') ?>" class="btn btn-outline-danger btn-sm">
+                Disconnect Google
+            </a>
+        </div>
+    </div>
+<?php else: ?>
+    <!-- Show sync button only if Google is not connected -->
+    <div class="mb-3">
+        <a href="<?= base_url('calendar/connectGoogle') ?>" class="btn btn-outline-success btn-sm">
+            Sync Google Calendar
+        </a>
+    </div>
+<?php endif; ?>
 
     <div class="calendar-legend card mb-3">
         <div class="card-body py-3">
@@ -89,6 +135,7 @@
         </div>
     </div>
 </div>
+
 
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
